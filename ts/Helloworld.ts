@@ -1,0 +1,8 @@
+/**
+ * HelloWorld
+ */
+class HelloWorld {
+    constructor() {
+        
+    }
+}
