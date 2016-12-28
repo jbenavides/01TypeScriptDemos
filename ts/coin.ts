@@ -1,19 +1,60 @@
 /**
- * Quarter
+ * Coin
  */
-class Quarter {
 
-    private value: number = .25;
+namespace Coins{
 
-    get Value(){
-        return this.value;
+    let imagePath = "img/";
+
+    export abstract class Coin {
+        
+        constructor(public value: number){
+            this.value = value;
+        }
+
+        abstract getImageUrl(): string;
     }
 
-    set Value(newValue: number){
-        this.value = newValue;
+
+    export class Quarter extends Coin {
+        
+        constructor(){
+            super(.25);
+        }    
+
+        getImageUrl():string{
+            return imagePath + "Quarter.png";
+        }
     }
 
-    getImageUrl():string{
-        return "img/Quarter.png";
+    export class Dime extends Coin{
+        
+        constructor(){
+            super(.10);
+        }
+
+        getImageUrl():string{
+            return imagePath +"Dime.png";
+        }
+    }
+
+    export class Half extends Coin {
+        constructor(){
+            super(.5);
+        }
+
+        getImageUrl(): string {
+            return imagePath + "Half.png";
+        }
+    }
+
+    export class Dollar extends Coin{
+        constructor(){
+            super(1);
+        }
+
+        getImageUrl() : string {
+            return imagePath + "Dollar.jpg";
+        }
     }
 }
